@@ -1,5 +1,30 @@
 {
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "semicolon": [true, "never"],
+    "object-literal-sort-keys": false,
+    "indent": [true, "spaces", 2],
+    "interface-name": false,
+    "quotemark": [true, "single"],
+    "no-empty-interface": false,
+    "member-access": false,
+    "no-empty": false,
+    "no-console": false,
+    "arrow-return-shorthand": false,
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-rest-spread",
+      "check-type",
+      "check-typecast",
+      "check-type-operator",
+      "check-preblock"
+    ]
+  },
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
