@@ -1,15 +1,19 @@
-import { LoginActions } from '@/Login/modules'
-import { FetchTokenRequest } from '@/models/types'
+import { actions } from '@/Login/modules'
+import { FetchTokenRequest, FetchTokenResponse } from '@/models/types'
 import { RootState } from '@/store'
 import { connect } from 'react-redux'
 import { Action, Dispatch } from 'redux'
 import { LoginComponent } from './view'
 
+interface Action {
+  fetchToken: (req: FetchTokenRequest) => Action<FetchTokenResponse>
+}
+
 const mapDispatchToProps = (dispatch: Dispatch<Action>) => {
   return {
-    fetchToken: async (req: FetchTokenRequest) => await dispatch(LoginActions.fetchToken.async.started(req)),
-    setUsername: (username: string) => dispatch(LoginActions.setUsername(username)),
-    setPassword: (password: string) => dispatch(LoginActions.setPassword(password)),
+    fetchToken: async (req: FetchTokenRequest) => await dispatch(actions.fetchToken.async.started(req)),
+    setUsername: (username: string) => dispatch(actions.setUsername(username)),
+    setPassword: (password: string) => dispatch(actions.setPassword(password)),
   }
 }
 

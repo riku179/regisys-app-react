@@ -28,7 +28,7 @@ const actionCreator = actionCreatorFactory('User')
 
 const asyncActionCreator = asyncFactory<RootState>(actionCreator)
 
-export const LoginActions = {
+export const actions = {
   fetchToken: asyncActionCreator<FetchTokenRequest, FetchTokenResponse, AxiosError>(
     'fetchToken',
     async (params, _, getState): Promise<FetchTokenResponse> => {
@@ -37,19 +37,16 @@ export const LoginActions = {
   ),
   setUsername: actionCreator<string>('setUsername'),
   setPassword: actionCreator<string>('setPassword'),
-  // setToken: actionCreator<string>('setToken'),
-  // setUser: actionCreator<User>('setUser'),
-  // setLogin: actionCreator<boolean>('setLogin'),
 }
 
-export const LoginReducers = reducerWithInitialState(InitialState)
-  .case(LoginActions.fetchToken.async.started, state => {
+export const reducers = reducerWithInitialState(InitialState)
+  .case(actions.fetchToken.async.started, state => {
     return {
       ...state,
       loading: true,
     }
   })
-  .case(LoginActions.fetchToken.async.done, (state, payload) => {
+  .case(actions.fetchToken.async.done, (state, payload) => {
     return {
       ...state,
       user: payload.result.user,
@@ -57,20 +54,20 @@ export const LoginReducers = reducerWithInitialState(InitialState)
       loggingIn: true,
     }
   })
-  .case(LoginActions.fetchToken.async.failed, (state, payload) => {
+  .case(actions.fetchToken.async.failed, (state, payload) => {
     return {
       ...state,
       loading: false,
       loginFailed: true,
     }
   })
-  .case(LoginActions.setUsername, (state, payload) => {
+  .case(actions.setUsername, (state, payload) => {
     return {
       ...state,
       username: payload,
     }
   })
-  .case(LoginActions.setPassword, (state, payload) => {
+  .case(actions.setPassword, (state, payload) => {
     return {
       ...state,
       password: payload,
