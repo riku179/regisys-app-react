@@ -21,12 +21,13 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
-    "lint": "tslint --project . --fix",
-    "lint-no-fix": "tslint --project .",
+    "lint": "tslint --project .",
+    "lint:fix": "tslint --project . --fix",
     "build": "react-scripts-ts build",
+    "build:analyze": "node scripts/analyze.js",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject",
-    "analyze": "node scripts/analyze.js"
+    "test:coverage": "react-scripts-ts test --env=jsdom --coverage",
+    "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
