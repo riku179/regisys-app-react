@@ -19,6 +19,8 @@ jobs:
     steps:
     - checkout
 
+    - run: echo y | docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
+
     # Download and cache dependencies
     - restore_cache:
         keys:
@@ -52,6 +54,11 @@ jobs:
     - run:
         name: Upload coverage to codecov
         command: $(yarn bin)/codecov
+
+#    - deploy:
+#        command: |
+#          docker build . -t rinoueshiroyagi/regisys-app-react:${CIRCLE_SHA1::7}
+#          docker push rinoueshiroyagi/regisys-app-react:${CIRCLE_SHA1::7}
 
     - store_artifacts:
         path: reports/jest
