@@ -32,7 +32,7 @@ jobs:
 
     - run:
         name: Install codecov
-        command: yarn global add codecov
+        command: yarn add -D codecov
 
     - save_cache:
         paths:
@@ -51,7 +51,7 @@ jobs:
 
     - run:
         name: Upload coverage to codecov
-        command: codecov
+        command: $(yarn bin)/codecov
 
     - store_artifacts:
         path: reports/jest
