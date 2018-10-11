@@ -36,5 +36,7 @@ jobs:
     # run tests!
     - run: yarn test
 
+    - run: yarn test:coverage
+
     - store_artifacts:
         path: ./coverage
