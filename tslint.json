@@ -35,8 +35,7 @@
     "exclude": [
       "config/**/*.js",
       "node_modules/**/*.ts",
-      "coverage/lcov-report/*.js",
-      "jest.config.js"
+      "coverage/lcov-report/*.js"
     ]
   }
 }
