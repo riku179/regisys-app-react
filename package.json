@@ -23,7 +23,7 @@
     "start": "react-scripts-ts start",
     "lint": "tslint --project .",
     "lint:fix": "tslint --project . --fix",
-    "lint:ci": "tslint --project . --format stylish -o reports/tslint/lint-results.xml",
+    "lint:ci": "tslint --project . --format junit -o reports/tslint/lint-results.xml",
     "build": "react-scripts-ts build",
     "build:analyze": "node scripts/analyze.js",
     "test": "react-scripts-ts test --env=jsdom",
@@ -40,6 +40,7 @@
     "@types/react-redux": "^6.0.9",
     "jest-junit": "^5.2.0",
     "redux-devtools": "^3.4.1",
+    "tslint": "^5.11.0",
     "typescript": "^3.0.3",
     "webpack-bundle-analyzer": "^3.0.2"
   }
