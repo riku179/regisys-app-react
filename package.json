@@ -7,6 +7,7 @@
     "@material-ui/icons": "^3.0.1",
     "@types/react-router-dom": "^4.3.1",
     "@types/redux-thunk": "^2.1.0",
+    "@types/validator": "^9.4.2",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "react": "^16.5.2",
@@ -17,7 +18,8 @@
     "styled-components": "^3.4.10",
     "typescript-fsa": "^3.0.0-beta-2",
     "typescript-fsa-reducers": "^0.4.5",
-    "typescript-fsa-redux-thunk": "^2.0.0-beta.11"
+    "typescript-fsa-redux-thunk": "^2.0.0-beta.11",
+    "validator": "^10.8.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -43,5 +45,6 @@
     "tslint": "^5.11.0",
     "typescript": "^3.0.3",
     "webpack-bundle-analyzer": "^3.0.2"
-  }
+  },
+  "proxy": "http://localhost:8000"
 }

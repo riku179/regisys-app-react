@@ -12,6 +12,7 @@
     "no-console": false,
     "arrow-return-shorthand": false,
     "jsx-boolean-value": false,
+    "jsx-no-lambda": false,
     "trailing-comma": [true, {
       "multiline": "always",
       "singleline": "never"
